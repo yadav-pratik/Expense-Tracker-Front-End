@@ -40,7 +40,7 @@ export const startUpdateBudget = (budget) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.put(`api/budget/${budget._id}`, {amount : budget.amount},{
+                const {data} = await axios.put(`/api/budget/${budget._id}`, {amount : budget.amount},{
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
