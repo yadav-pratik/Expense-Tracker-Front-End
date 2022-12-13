@@ -161,50 +161,6 @@ const ExpensesTable = (props) => {
                 </form>
             </div>
 
-            {/* <table className='table table-bordered shadow'>
-                <thead>
-                    <tr>
-                        <th>Sr.no</th>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Amount</th>
-                        <th>Expense Date</th>
-                        <th>Created On</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {expensesTableData.map( (exp, i) => {
-                        return (
-                            <tr key={exp._id} className={exp.isDeleted ? 'table-danger' : undefined}>
-                                <td>{i+1}</td>
-                                <td>{exp.isDeleted ? <s style={{color : 'red'}}>{exp.title}</s> : exp.title}</td>
-                                <td>{exp.categoryId ? exp.categoryId.name : 'Category-Deleted'}</td>
-                                <td>{exp.amount}</td>
-                                <td>{exp.expenseDate.slice(0,10)}</td>
-                                <td>{exp.createdAt.slice(0,10)}</td>
-                                <td>
-                                    <Link to='statsContainer'>
-                                    <button 
-                                        className='btn btn-outline-secondary btn-sm'
-                                        disabled={exp.isDeleted}
-                                        onClick={()=>{
-                                            handleToggle(exp)
-                                        }}
-                                        >Edit</button></Link>
-                                    <button 
-                                        className='btn btn-outline-dark btn-sm'
-                                        onClick={()=>{
-                                            handleExpenseDelete(exp._id, exp.isDeleted ? 'delete@false' : 'delete@true')
-                                        }}>{exp.isDeleted ? "Undo" : "Delete"}</button>
-                                </td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
-             */}
-
             <BootstrapTable
                 bootstrap4
                 keyField="_id"
