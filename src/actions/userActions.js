@@ -5,7 +5,7 @@ export const startRegisterUser = (formData, clearAndRedirect) => {
     return (
         async () => {
             try {
-                const { data } = await axios.post('http://localhost:3040/api/users',formData)
+                const { data } = await axios.post('/api/users',formData)
                 if(data.hasOwnProperty('errors')){
                     // alert(data.message)
                     swal({
@@ -34,7 +34,7 @@ export const startLoginUser =  (formData, clearAndRedirect) => {
     return (
         async () => {
             try {
-                const { data } = await axios.post('http://localhost:3040/api/users/login',formData)
+                const { data } = await axios.post('/api/users/login',formData)
                 if(data.hasOwnProperty('notice')){
                     swal({
                         title : data.notice,
@@ -62,7 +62,7 @@ export const startGetUser = () => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.get('http://localhost:3040/api/users',{
+                const {data} = await axios.get('/api/users',{
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
@@ -89,7 +89,7 @@ export const startUpdateUser = (formData, clearAndToggle) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.put('http://localhost:3040/api/users', formData, {
+                const {data} = await axios.put('/api/users', formData, {
                     headers : {
                         authorization : localStorage.getItem('token'),
                         "Content-Type ": "multipart/form-data"

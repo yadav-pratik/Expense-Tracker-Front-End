@@ -5,7 +5,7 @@ export const startGetExpenses = () => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.get('http://localhost:3040/api/expenses', {
+                const {data} = await axios.get('/api/expenses', {
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
@@ -32,7 +32,7 @@ export const startAddExpense = (formData, clear) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.post('http://localhost:3040/api/expenses', formData, {
+                const {data} = await axios.post('/api/expenses', formData, {
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
@@ -60,7 +60,7 @@ export const startDeleteExpense = (id, action) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.put(`http://localhost:3040/api/expenses/${id}/?action=${action}`, {} , {
+                const {data} = await axios.put(`/api/expenses/${id}/?action=${action}`, {} , {
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
@@ -87,7 +87,7 @@ export const startUpdateExpense = (formData, clear, id) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.put(`http://localhost:3040/api/expenses/${id}/?action=update`, formData , {
+                const {data} = await axios.put(`/api/expenses/${id}/?action=update`, formData , {
                     headers : {
                         authorization : localStorage.getItem('token')
                     }

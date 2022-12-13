@@ -5,7 +5,7 @@ export const startGetCategories = () => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.get('http://localhost:3040/api/categories', {
+                const {data} = await axios.get('/api/categories', {
                     headers : {
                         authorization : localStorage.getItem('token')       
                     }
@@ -34,7 +34,7 @@ export const startAddCateogry = (updateData, clearField) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.post('http://localhost:3040/api/categories',updateData, {
+                const {data} = await axios.post('/api/categories',updateData, {
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
@@ -69,7 +69,7 @@ export const startDeleteCategory = (id) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.delete(`http://localhost:3040/api/categories/${id}`,{
+                const {data} = await axios.delete(`/api/categories/${id}`,{
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
@@ -96,7 +96,7 @@ export const startUpdateCategory = (updateData, id, handleToggle) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.put(`http://localhost:3040/api/categories/${id}`, updateData, {
+                const {data} = await axios.put(`/api/categories/${id}`, updateData, {
                     headers : {
                         authorization : localStorage.getItem('token')
                     }

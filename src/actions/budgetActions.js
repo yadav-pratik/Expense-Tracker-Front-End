@@ -6,7 +6,7 @@ export const startGetBudget = () => {
     return (
         async (dispatch) => {
             try {
-                const { data } = await axios.get('http://localhost:3040/api/budget',{
+                const { data } = await axios.get('/api/budget',{
                     headers : {
                         authorization : localStorage.getItem('token')
                     }
