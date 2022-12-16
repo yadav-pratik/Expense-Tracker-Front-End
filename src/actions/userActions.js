@@ -45,7 +45,7 @@ export const startLoginUser =  (formData, clearAndRedirect) => {
                         title : data.message,
                         icon : 'error'
                     })
-                } else {
+                } else if(data.hasOwnProperty('token')){
                     swal({
                         title : 'Login Successful',
                         icon : 'success'
