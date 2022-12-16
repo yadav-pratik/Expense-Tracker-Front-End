@@ -40,6 +40,11 @@ export const startLoginUser =  (formData, clearAndRedirect) => {
                         title : data.notice,
                         icon : 'error'
                     })
+                } else if(data.hasOwnProperty('errors') || data.hasOwnProperty('message')){
+                    swal({
+                        title : data.message,
+                        icon : 'error'
+                    })
                 } else {
                     swal({
                         title : 'Login Successful',
