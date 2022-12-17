@@ -57,6 +57,12 @@ const UserForm = (props) => {
             //occupation validations
             if(occupation.length === 0){
                 errors.occupation = 'Occupation cannot be empty'
+            }  
+
+            //profilePic validations
+            const fileSizeKB = profilePic.size/1024
+            if(fileSizeKB > 200){
+                errors.profilePic = 'Maximum file size is 200kb'
             }
         }
     }
@@ -163,7 +169,7 @@ const UserForm = (props) => {
                                 onChange={handleChange}
                                 name="profilePic"
                             />
-                            <br/>
+                            {formErrors.profilePic ? <p style={validationStyle}>{formErrors.profilePic}</p> : <br/>}
                         </div>
                     )}
                     <input className="btn btn-primary" type='submit' value="Submit" />

@@ -42,6 +42,10 @@ const Profile = (props) => {
         dispatch(startUpdateUser(formData, clearAndToggle))
     }
 
+    const image = user.profilePic  && btoa(
+        String.fromCharCode(...new Uint8Array(user.profilePic.data.data))
+    )
+
     return (
         <div>
             <div className='row'>
@@ -75,7 +79,7 @@ const Profile = (props) => {
                     </div>
                     <img 
                         className='col-2'
-                        src={user.profilePic ? process.env.REACT_APP_IMAGE_PATH + user.profilePic : require('../../images/PngItem_5040528.png')} 
+                        src={user.profilePic ? `data:image/jpeg;base64,${image}` : require('../../images/PngItem_5040528.png')} 
                         height={user.profilePic ? '300px' : '230px'}
                         alt="profile_image"
                     />
