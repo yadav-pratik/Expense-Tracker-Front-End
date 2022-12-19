@@ -37,9 +37,9 @@ const Dashboard = (props) => {
     return (
         <div>
             <div className='row mb-4'>
-                <h2 className='col-6 col-md-9'>User Dashboard</h2>
+                <h2 className='col-6 col-md-10'>User Dashboard</h2>
                 <button 
-                    className='col col-md-2 btn btn-secondary shadow' 
+                    className='col btn btn-secondary shadow' 
                     onClick={handleClick}
                     style={{marginRight : '10px'}}
                 >Logout</button>
