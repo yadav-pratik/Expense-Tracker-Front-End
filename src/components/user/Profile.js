@@ -69,9 +69,9 @@ const Profile = (props) => {
                 <div className='row mt-5'>
                     <div className='col-9'>
                         <h4 className='mb-5'>Personal Details</h4>
-                        <h4>Name - {user.profile && user.profile.name}</h4>
-                        <h4>Email - {user.email}</h4>
-                        <h4>Occupation - {user.profile && user.profile.occupation}</h4>
+                        <h5>Name - {user.profile ? user.profile.name : 'Loading...'}</h5>
+                        <h5>Email - {user.email ? user.email : 'Loading...'}</h5>
+                        <h5>Occupation - {user.profile ? user.profile.occupation : 'Loading...'}</h5>
                         <button
                             className='mt-5 btn btn-outline-primary'
                             onClick={handleToggle}
