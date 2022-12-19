@@ -129,8 +129,8 @@ const ExpenseForm = (props) => {
                 />
                 {formErrors.date ? <p style={validationStyle}>{formErrors.date}</p> : <><br/><br/></>}
                 </div>
-                <button className='col-md-2 btn btn-outline-primary' type="submit">Submit</button>
-                <button className='col-md-2 btn btn-outline-secondary' onClick={()=>{handleToggle()}}>Cancel</button>
+                <button className='col-6 col-md-2 btn btn-outline-primary' type="submit">Submit</button>
+                <button className='col-6 col-md-2 btn btn-outline-secondary' onClick={()=>{handleToggle()}}>Cancel</button>
             </div>
         </form>        
     )

@@ -139,8 +139,8 @@ const ExpensesTable = (props) => {
                 </div>
             }
             <div className='row mb-3'>
-                <h3 className='col-md-5'>Expenses Table</h3>
-                <form className='col-md-2'>
+                <h3 className='col-6 col-md-5'>Expenses Table</h3>
+                <form className='col-6 col-md-2'>
                     <select 
                         className='form-control shadow'
                         value={deletedExpenses}

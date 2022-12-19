@@ -50,7 +50,7 @@ const Profile = (props) => {
     return (
         <div>
             <div className='row'>
-                <h2 className='col-10'>Profile Page</h2>
+                <h2 className='col-6 col-md-10'>Profile Page</h2>
                 <button 
                     className='col btn btn-secondary shadow' 
                     style={{marginRight : '10px'}}
@@ -59,7 +59,7 @@ const Profile = (props) => {
             </div>
             { toggle ? (
                 <div style={{width : '40vw' , minWidth : '300px'}}>
-                    <h4>Edit Profile</h4>
+                    <h4 className='mt-5'>Edit Profile</h4>
                     <UserForm 
                         handleToggle = {handleToggle}
                         formSubmit = {formSubmit}
@@ -68,7 +68,7 @@ const Profile = (props) => {
                 </div>
             ) : (
                 <div className='row mt-5'>
-                    <div className='col-9'>
+                    <div className='col-md-9'>
                         <h4 className='mb-5'>Personal Details</h4>
                         <h5>Name - {user.profile ? user.profile.name : 'Loading...'}</h5>
                         <h5>Email - {user.email ? user.email : 'Loading...'}</h5>
@@ -79,7 +79,7 @@ const Profile = (props) => {
                         >Edit Details</button>
                     </div>
                     <img 
-                        className='col-2'
+                        className='col-md-2'
                         src={user.profilePic ? `data:image/jpeg;base64,${image}` : require('../../images/PngItem_5040528.png')} 
                         height={user.profilePic ? '300px' : '230px'}
                         alt="profile_image"

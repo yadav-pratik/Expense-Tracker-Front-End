@@ -75,7 +75,7 @@ const Settings = (props) => {
     return (
         <div>
              <div className='row mb-4'>
-                <h2 className='col-10'>Settings Page</h2>
+                <h2 className='col-6 col-md-10'>Settings Page</h2>
                 <button 
                     className='col btn btn-secondary shadow' 
                     onClick={handleClick}
@@ -83,7 +83,7 @@ const Settings = (props) => {
                 >Logout</button>
             </div>
             <div className='row mb-4'>
-                <div className='col-md-3'>
+                <div className='col-6 col-md-3'>
                     <form onSubmit={handleBudgetUpdate}>
                         <input 
                             className='form-control mb-1 shadow'
@@ -98,7 +98,7 @@ const Settings = (props) => {
                         />
                     </form>
                 </div>
-                <div className='col-md-4'>
+                <div className='col-6 col-md-4'>
                     <form onSubmit={handleAddCategory}>
                         <input 
                             className='form-control mb-1 shadow'

@@ -20,7 +20,7 @@ const BudgetOverview = (props) => {
     })
 
     return (
-        <div className="col">
+        <div className="col-12 col-md-6">
             <h4 className="mb-5" style={{textAlign : 'center'}}>Budget Overview</h4>
             
             <ProgressBar 

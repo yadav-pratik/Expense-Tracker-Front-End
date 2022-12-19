@@ -33,7 +33,7 @@ const AddExpense = (props) => {
             ) : (
                 <div className='row'>
                     <button 
-                        className='col-md-2 btn btn-primary' 
+                        className='col-6 col-md-2 btn btn-primary' 
                         style={{height : '40px', marginLeft : '10px'}} 
                         onClick={handleToggle}
                     >Add New Expense</button>

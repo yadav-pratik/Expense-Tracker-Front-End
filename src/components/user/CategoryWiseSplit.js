@@ -34,7 +34,7 @@ const CategoryWiseSplit = (props) => {
     }
 
     return (
-        <div className="col">
+        <div className="col-12 col-md-6">
             <h4 style={{textAlign : 'center'}}>Category Wise Split</h4>
             {categories.length <= 5 ? (
                 <Chart
