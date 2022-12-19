@@ -35,7 +35,16 @@ const BudgetOverview = (props) => {
                 <div className="col card bg-light mb-3 shadow">
                     <div className="card-header"><h5 style={textAlign}>Total Budget</h5></div>
                     <div className="card-body">
-                        <h5 className="card-title" style={textAlign}>Rs. {budget.amount}</h5>
+                        <h5 className="card-title" style={textAlign}>
+                            {
+                                budget.hasOwnProperty('amount') ? (
+                                    `Rs. ${budget.amount}`
+                                ) : (
+                                    <div class="spinner-border" role="status">
+                                    </div>
+                                )
+                            }
+                        </h5>
                     </div>
                 </div>
                 <div className="col card bg-light mb-3 shadow">
