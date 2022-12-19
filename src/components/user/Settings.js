@@ -27,6 +27,7 @@ const Settings = (props) => {
     })
 
     useEffect(()=>{
+        document.title = 'Settings - Expense Tracker App'
         dispatch(startGetBudget())
         dispatch(startGetCategories())
     },[dispatch])

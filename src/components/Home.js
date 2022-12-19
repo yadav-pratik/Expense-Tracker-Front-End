@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {Link} from 'react-router-dom'
 
 
 const Home = (props) => {
+    useEffect(()=>{
+        document.title = 'Home - Expense Tracker App'
+    },[])
+
     const handleClick = (e) => {
         props.history.push('/user/register')
     }

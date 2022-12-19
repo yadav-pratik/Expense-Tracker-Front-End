@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {Link} from 'react-router-dom'
 import { useDispatch } from "react-redux"
 
@@ -8,6 +8,10 @@ import UserForm from "../reused-components/UserForm"
 
 
 const Register = (props) => {
+
+    useEffect(()=>{
+    document.title = 'Register with Us - Expense Tracker App'
+    },[])
 
     const dispatch = useDispatch()
 

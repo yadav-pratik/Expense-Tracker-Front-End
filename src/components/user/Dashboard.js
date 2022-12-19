@@ -17,6 +17,7 @@ const Dashboard = (props) => {
     const dispatch = useDispatch()
 
     useEffect(()=>{
+        document.title = 'Dashboard - Expense Tracker App'
         dispatch(startGetBudget())
         dispatch(startGetExpenses())
         dispatch(startGetCategories())

@@ -19,6 +19,7 @@ const Profile = (props) => {
     })
 
     useEffect(()=>{
+        document.title = 'Profile - Expense Tracker App'
         dispatch(startGetUser())
     },[dispatch])
 

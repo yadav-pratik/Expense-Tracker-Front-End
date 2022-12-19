@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState, useEffect} from "react"
 import isEmail from 'validator/lib/isEmail'
 import {Link} from 'react-router-dom'
 import { useDispatch } from "react-redux"
@@ -14,6 +14,10 @@ const Login = (props) => {
     const errors = {}
 
     const validationStyle = {color : 'red'}
+
+    useEffect(()=>{
+    document.title = 'Login - Expense Tracker App'
+    },[])
 
     const dispatch = useDispatch()
 
