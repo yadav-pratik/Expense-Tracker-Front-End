@@ -115,14 +115,21 @@ const Settings = (props) => {
                 </div>
             </div>
             <h3>Your Cateories</h3>
-            <div className='d-flex flex-wrap'>
-                {categories.map(category => {
-                    return <CategoryItem 
-                            key={category._id}
-                            {...category}
-                    />
-                })}
-            </div>
+            { categories.length ? (
+                    <div className='d-flex flex-wrap'>
+                        {categories.map(category => {
+                            return <CategoryItem 
+                                    key={category._id}
+                                    {...category}
+                            />
+                        })}
+                    </div>
+                ) : (
+                    <div className='d-flex justify-content-center'>
+                        <h5 className='mt-5'>You Dont have any Categories! Add some categories and start adding your expenses!!</h5>
+                    </div>
+                )
+            }  
         </div>
     )
 }
