@@ -46,6 +46,10 @@ export const startUpdateBudget = (budget) => {
                     }
                 })
                 dispatch(setBudget(data))
+                swal({
+                    title : 'Budget Updated!',
+                    icon : 'success'
+                })
             } catch (error) {
                 swal({
                     title : error.message,

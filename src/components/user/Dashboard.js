@@ -17,9 +17,9 @@ const Dashboard = (props) => {
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(startGetCategories())
-        dispatch(startGetExpenses())
         dispatch(startGetBudget())
+        dispatch(startGetExpenses())
+        dispatch(startGetCategories())
     },[dispatch])
 
     const handleClick = () => {
