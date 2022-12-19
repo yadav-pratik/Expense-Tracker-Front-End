@@ -14,7 +14,10 @@ const NavBar = (props) => {
     const navStyle = {
         color : 'white',
         width : '8vw', 
+        minWidth : '60px',
         height : '5vh',
+        minHeight : '30px',
+        maxHeight : '35px',
         minWidth : '100px',
         textAlign : 'center',
         marginRight : '7px',
@@ -36,7 +39,7 @@ const NavBar = (props) => {
             <div className="sticky-top">
                 <div className='navbar bg-dark'>
                     <div className='navbar-brand'>
-                        <h1><Link to="/" style={brandStyle}>Expenses App</Link></h1>
+                        <h1><Link to="/" style={brandStyle}>Expense Tracker</Link></h1>
                     </div>
                 </div > 
                 {isLogged ? (
