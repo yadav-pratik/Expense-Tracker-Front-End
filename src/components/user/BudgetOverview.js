@@ -40,7 +40,7 @@ const BudgetOverview = (props) => {
                                 budget.hasOwnProperty('amount') ? (
                                     `Rs. ${budget.amount}`
                                 ) : (
-                                    <div class="spinner-border" role="status">
+                                    <div className="spinner-border" role="status">
                                     </div>
                                 )
                             }

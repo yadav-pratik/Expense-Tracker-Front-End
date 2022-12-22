@@ -7,13 +7,11 @@ export const startRegisterUser = (formData, clearAndRedirect) => {
             try {
                 const { data } = await axios.post('/api/users',formData)
                 if(data.hasOwnProperty('errors')){
-                    // alert(data.message)
                     swal({
                         title : data.message,
                         icon : 'info'
                     })
                 } else {
-                    // alert(data.success)
                     swal({
                         title : data.success,
                         icon : 'success'
