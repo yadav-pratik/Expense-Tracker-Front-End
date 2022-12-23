@@ -1,5 +1,5 @@
 import axios from 'axios'
-import swal from 'sweetalert'
+import { normalAlert } from '../Helper Functions/sweetAlerts'
 
 export const startRegisterUser = (formData, clearAndRedirect) => {
     return (

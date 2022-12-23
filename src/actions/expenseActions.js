@@ -1,5 +1,5 @@
 import axios from 'axios'
-import normalAlert from '../Helper Functions/sweetAlerts'
+import { normalAlert } from '../Helper Functions/sweetAlerts'
 
 export const startGetExpenses = () => {
     return (
