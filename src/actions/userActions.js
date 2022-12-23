@@ -68,7 +68,11 @@ export const startUpdateUser = (formData, clearAndToggle) => {
     return (
         async (dispatch) => {
             try {
-                const {data} = await axios.put('/api/users', formData)
+                const {data} = await axios.put('/api/users', formData, {
+                    headers : {
+                        authorization : localStorage.getItem('token')
+                    }
+                })
                 clearAndToggle()
                 dispatch(setUser(data))
             } catch (error) {
