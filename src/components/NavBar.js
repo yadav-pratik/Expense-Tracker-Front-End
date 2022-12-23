@@ -8,6 +8,7 @@ import Register from "./authentication/Register"
 import Login from "./authentication/Login"
 import Settings from "./user/Settings"
 import Profile from "./user/Profile"
+import NotFound from "./NotFound"
 import PrivateRoute from "./authentication/PrivateRoute"
 
 const NavBar = (props) => {
