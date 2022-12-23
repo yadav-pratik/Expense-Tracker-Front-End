@@ -7,22 +7,13 @@ export const startRegisterUser = (formData, clearAndRedirect) => {
             try {
                 const { data } = await axios.post('/api/users',formData)
                 if(data.hasOwnProperty('errors')){
-                    swal({
-                        title : data.message,
-                        icon : 'info'
-                    })
+                    normalAlert(data.message, 'info')
                 } else {
-                    swal({
-                        title : data.success,
-                        icon : 'success'
-                    })
+                    normalAlert(data.success, 'success')
                     clearAndRedirect()
                 }
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -34,28 +25,16 @@ export const startLoginUser =  (formData, clearAndRedirect) => {
             try {
                 const { data } = await axios.post('/api/users/login',formData)
                 if(data.hasOwnProperty('notice')){
-                    swal({
-                        title : data.notice,
-                        icon : 'error'
-                    })
+                    normalAlert(data.notice, 'error')
                 } else if(data.hasOwnProperty('errors') || data.hasOwnProperty('message')){
-                    swal({
-                        title : data.message,
-                        icon : 'error'
-                    })
+                    normalAlert(data.message, 'error')
                 } else if(data.hasOwnProperty('token')){
-                    swal({
-                        title : 'Login Successful',
-                        icon : 'success'
-                    })
+                    normalAlert('Login Successful', 'success')
                     localStorage.setItem('token',data.token)
                     clearAndRedirect()
                 }
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -72,10 +51,7 @@ export const startGetUser = () => {
                 })
                 dispatch(setUser(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -96,10 +72,7 @@ export const startUpdateUser = (formData, clearAndToggle) => {
                 clearAndToggle()
                 dispatch(setUser(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import swal from 'sweetalert'
+import { normalAlert } from '../Helper Functions/sweetAlerts'
 
 export const startGetBudget = () => {
 
@@ -13,10 +13,7 @@ export const startGetBudget = () => {
                 })
                 dispatch(setBudget(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -46,15 +43,9 @@ export const startUpdateBudget = (budget) => {
                     }
                 })
                 dispatch(setBudget(data))
-                swal({
-                    title : 'Budget Updated!',
-                    icon : 'success'
-                })
+                normalAlert('Budget Updated!', 'success')
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })                
+                normalAlert(error.message, 'error')              
             }
         }
     )

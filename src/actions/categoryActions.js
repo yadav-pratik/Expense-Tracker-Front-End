@@ -1,5 +1,5 @@
 import axios from 'axios'
-import swal from 'sweetalert'
+import normalAlert from '../Helper Functions/sweetAlerts'
 
 export const startGetCategories = () => {
     return (
@@ -12,10 +12,7 @@ export const startGetCategories = () => {
                 })
                 dispatch(setCategories(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -40,19 +37,13 @@ export const startAddCateogry = (updateData, clearField) => {
                     }
                 })
                 if(data.hasOwnProperty('errors')){
-                    swal({
-                        title :data._message,
-                        icon : 'info'
-                    })
+                    normalAlert(data._message, 'info')
                 } else {
                     clearField()
                     dispatch(addCategory(data))
                 }
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -76,10 +67,7 @@ export const startDeleteCategory = (id) => {
                 })
                 dispatch(deleteCategory(data._id))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -104,10 +92,7 @@ export const startUpdateCategory = (updateData, id, handleToggle) => {
                 handleToggle()
                 dispatch(updateCategory(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )

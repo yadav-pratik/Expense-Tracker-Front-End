@@ -1,5 +1,5 @@
 import axios from 'axios'
-import swal from 'sweetalert'
+import normalAlert from '../Helper Functions/sweetAlerts'
 
 export const startGetExpenses = () => {
     return (
@@ -12,10 +12,7 @@ export const startGetExpenses = () => {
                 })
                 dispatch(setExpenses(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -40,10 +37,7 @@ export const startAddExpense = (formData, clear) => {
                 clear()
                 dispatch(addExpense(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -67,10 +61,7 @@ export const startDeleteExpense = (id, action) => {
                 })
                 dispatch(updateExpense(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
@@ -95,10 +86,7 @@ export const startUpdateExpense = (formData, clear, id) => {
                 clear()
                 dispatch(updateExpense(data))
             } catch (error) {
-                swal({
-                    title : error.message,
-                    icon : 'error'
-                })
+                normalAlert(error.message, 'error')
             }
         }
     )
