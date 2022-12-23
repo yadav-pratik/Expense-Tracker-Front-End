@@ -1,5 +1,5 @@
 import React from "react"
-import {Link, Route} from 'react-router-dom'
+import {Link, Route, Switch} from 'react-router-dom'
 import { useSelector } from "react-redux"
 
 import Home from './Home' 
@@ -56,11 +56,14 @@ const NavBar = (props) => {
                     </div>
                 )}
             </div>  
-            <Route path='/' component={isLogged ? Dashboard : Home} exact/>
-            <Route path='/user/register' component={Register}/>
-            <Route path='/user/login' component={Login}/>
-            <PrivateRoute path='/user/settings' component={Settings}/>
-            <PrivateRoute path='/user/profile' component={Profile}/>
+            <Switch>
+                <Route path='/' component={isLogged ? Dashboard : Home} exact/>
+                <Route path='/user/register' component={Register} exact/>
+                <Route path='/user/login' component={Login} exact/>
+                <PrivateRoute path='/user/settings' component={Settings} exact/>
+                <PrivateRoute path='/user/profile' component={Profile} exact/>
+                <Route path='*' component={NotFound} />
+            </Switch>
 
         </div>
     )
