@@ -70,7 +70,8 @@ export const startUpdateUser = (formData, clearAndToggle) => {
             try {
                 const {data} = await axios.put('/api/users', formData, {
                     headers : {
-                        authorization : localStorage.getItem('token')
+                        authorization : localStorage.getItem('token'),
+                        'Content-Type' : 'multipart/form-data'
                     }
                 })
                 clearAndToggle()
