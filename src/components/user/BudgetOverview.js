@@ -1,23 +1,31 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { useSelector } from "react-redux"
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const BudgetOverview = (props) => {
-    const { budget, expenses } = useSelector((state) => {
-        return state
+    const budget = useSelector((state) => {
+        return state.budget
+    })
+    const expenses = useSelector((state) => {
+        return state.expenses
     })
 
     const textAlign = {
         textAlign : 'center'
     }
     
-    let totalExpenses = 0
+    const totalExpenses = useMemo(()=>{
+        let totalExpenses = 0
+            
+        expenses.forEach((exp) => {
+            if(!exp.isDeleted){
+                totalExpenses += exp.amount
+            }
+        })
 
-    expenses.forEach((exp) => {
-        if(!exp.isDeleted){
-            totalExpenses += exp.amount
-        }
-    })
+        return totalExpenses
+    
+    },[JSON.stringify(expenses)])
 
     return (
         <div className="col-12 col-md-6">
