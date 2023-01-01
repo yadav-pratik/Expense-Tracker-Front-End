@@ -2,6 +2,9 @@ const expensesInitialValue = []
 
 const expensesReducer = (state = expensesInitialValue, action) => {
     switch(action.type){
+        case 'LOGOUT_USER' : {
+            return []
+        }
         case 'SET_EXPENSES' : {
             return [...action.payload]
         }
