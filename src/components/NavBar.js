@@ -15,7 +15,6 @@ const NavBar = (props) => {
     const navStyle = {
         color : 'white',
         width : '8vw', 
-        minWidth : '60px',
         height : '5vh',
         minHeight : '30px',
         maxHeight : '35px',

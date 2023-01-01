@@ -8,7 +8,7 @@ import { startGetExpenses } from '../../actions/expenseActions'
 
 import { handleLogout } from '../../Helper Functions/sweetAlerts'
 
-import ExpenseContainer from './ExpenseContainer'
+import ExpenseContainer from '../expenses/ExpenseContainer'
 import StatsContainer from './StatsContainer'
 import { startGetBudget } from '../../actions/budgetActions'
 

@@ -1,7 +1,7 @@
 import React,{ useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import CategoryItem from './CategoryItem'
+import CategoryItem from '../category/CategoryItem'
 
 import { toggleIsLogged } from '../../actions/isLoggedActions'
 import { startGetBudget, setBudgetAmount, startUpdateBudget } from '../../actions/budgetActions'

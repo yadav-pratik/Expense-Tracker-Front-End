@@ -1,7 +1,7 @@
 import React from "react"
 
-import BudgetOverview from './BudgetOverview'
-import CategoryWiseSplit from './CategoryWiseSplit'
+import BudgetOverview from '../budget/BudgetOverview'
+import CategoryWiseSplit from '../category/CategoryWiseSplit'
 
 const StatsContainer = (props) => {
  
